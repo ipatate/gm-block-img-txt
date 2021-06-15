@@ -1,0 +1,15 @@
+{
+	"apiVersion": 2,
+	"name": "goodmotion/gm-block-img-txt",
+	"title": "Gm Block Img Txt",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Block with image in background and text centered.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "gm-block-img-txt",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
