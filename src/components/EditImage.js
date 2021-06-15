@@ -13,7 +13,7 @@ const EditImage = ({ props }) => {
 	const img = useSelect(
 		(select) => {
 			const { getMedia } = select("core");
-			return image ? getMedia(image.id) : undefined;
+			return image.id ? getMedia(image.id) : false;
 		},
 		[image]
 	);
@@ -35,9 +35,11 @@ const EditImage = ({ props }) => {
 	// remove img
 	const onRemoveImage = () => {
 		setAttributes({
-			image: undefined,
+			image: {},
 		});
 	};
+	console.log(image, img);
+	console.log(!!image, !img);
 	return (
 		<div className={`gm-block-edit-image-container`}>
 			<MediaUploadCheck>
@@ -62,8 +64,8 @@ const EditImage = ({ props }) => {
 								onClick={open}
 								title={__("add image", "gm-block-img-txt")}
 							>
-								{!image && <Dashicon icon="plus-alt" />}
-								{!!image && !img && <Spinner />}
+								{!image.id && <Dashicon icon="plus-alt" />}
+								{!!image && image.id && !img && <Spinner />}
 							</Button>
 						);
 					}}
