@@ -13,7 +13,7 @@ export default function save(props) {
 				},
 			})}
 		>
-			<a href={target} title={label}>
+			<a href={target} title={label} className="gm-img-text-content">
 				<RichText.Content tagName="span" value={text} />
 			</a>
 		</div>

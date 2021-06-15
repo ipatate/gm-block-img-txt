@@ -20,22 +20,23 @@ export default function Edit(props) {
 			})}
 		>
 			<EditImage props={props} />
-			<RichText
-				className="gm-img-text-content"
-				allowedFormats={[]}
-				placeholder={__("The title", "gm-block-img-txt")}
-				value={text}
-				onChange={(content) => setAttributes({ text: content })}
-			/>
-			<URLInputButton
-				url={target}
-				onChange={(_target, post) =>
-					setAttributes({
-						target: _target,
-						label: (post && post.title) || label,
-					})
-				}
-			/>
+			<div className="gm-img-text-content">
+				<RichText
+					allowedFormats={[]}
+					placeholder={__("The title", "gm-block-img-txt")}
+					value={text}
+					onChange={(content) => setAttributes({ text: content })}
+				/>
+				<URLInputButton
+					url={target}
+					onChange={(_target, post) =>
+						setAttributes({
+							target: _target,
+							label: (post && post.title) || label,
+						})
+					}
+				/>
+			</div>
 		</div>
 	);
 }
